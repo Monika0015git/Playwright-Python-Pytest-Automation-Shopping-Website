@@ -77,103 +77,134 @@ playwright-vs-code-automation/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ## Key Features
-## 1. Page Object Model
+
+### 1. Page Object Model
 
 Each application page has its own page object containing:
 
--Page locators
--Page actions
--Page-specific validations
+* Page locators
+* Page actions
+* Page-specific validations
 
-A common BasePage is used as the parent class for the page objects.
+A common `BasePage` is used as the parent class for the page objects.
 
-## 2. Pytest
+### 2. Pytest
 
 pytest is used as the test framework for:
 
--Test execution
--Assertions
--Fixtures
--Test configuration
+* Test execution
+* Assertions
+* Fixtures
+* Test configuration
 
-## 3. Playwright
+### 3. Playwright
 
 Playwright is used for browser automation and web element interactions.
+
 The browser runs in headed mode so the automation steps can be visually observed during execution.
 
-## 4. Assertions
+### 4. Assertions
 
 Assertions are used to verify important application behavior and page states.
 
-## 5. Logging
+### 5. Logging
 
 Python logging is used to record useful information during test execution, such as:
 
--Application URL
--Page title
--Navigation
--Element visibility
--User actions
+* Application URL
+* Page title
+* Navigation
+* Element visibility
+* User actions
 
-## 6. HTML Reporting
+### 6. HTML Reporting
 
 pytest-html is used to generate an HTML test execution report.
 
-## 7. Prerequisites
+## Prerequisites
 
 Make sure the following are installed:
 
--Python
--pip
--Git
+* Python
+* pip
+* Git
 
-## 8. Installation
+## Installation
 
--Clone the repository:
+Clone the repository:
+
+```bash
 git clone https://github.com/Monika0015git/Playwright-Python-Pytest-Automation-Shopping-Website.git
+```
 
--Navigate to the project directory:
+Navigate to the project directory:
+
+```bash
 cd Playwright-Python-Pytest-Automation-Shopping-Website
+```
 
--Create a virtual environment:
+Create a virtual environment:
+
+```bash
 python -m venv venv
+```
 
--Activate the virtual environment on Windows:
+Activate the virtual environment on Windows:
+
+```powershell
 venv\Scripts\Activate.ps1
+```
 
--Install the required Python packages:
+Install the required Python packages:
+
+```bash
 pip install -r requirements.txt
+```
 
--Install Playwright browsers:
+Install Playwright browsers:
+
+```bash
 playwright install
+```
 
-## 10. How to Run Tests
+## How to Run Tests
 
--Run the complete test suite:
+Run the complete test suite:
+
+```bash
 pytest
+```
 
--Run tests with console output visible:
+Run tests with console output visible:
+
+```bash
 pytest -s
+```
 
--Generate an HTML report:
+Generate an HTML report:
+
+```bash
 pytest -s --html=reports/report.html --self-contained-html
+```
 
-## 11. Test Reports and Logging
+## Test Reports and Logging
 
 The project is configured to:
 
--Display test logs in the terminal
--Store logs in reports/test.log
--Generate HTML test reports in the reports directory
+* Display test logs in the terminal
+* Store logs in `reports/test.log`
+* Generate HTML test reports in the `reports` directory
 
-The reports directory is excluded from Git using .gitignore.
+The `reports` directory is excluded from Git using `.gitignore`.
 
-## 12. Page Object Model
+## Page Object Model
 
--The framework follows a simple Page Object Model structure.
+The framework follows a simple Page Object Model structure.
 
+```text
 BasePage
    │
    ├── HomePage
@@ -182,18 +213,20 @@ BasePage
    ├── ProductDetailsPage
    ├── ViewCartPage
    └── CheckoutPage
+```
 
--The test class interacts with the page objects rather than directly locating elements inside the test.
--This keeps the test scenario easier to read and makes page-specific code easier to maintain.
+The test class interacts with the page objects rather than directly locating elements inside the test.
 
-## 13. Future Enhancements
+This keeps the test scenario easier to read and makes page-specific code easier to maintain.
+
+## Future Enhancements
 
 Possible future improvements include:
 
--Add more test scenarios
--Add parameterized test data
--Improve test data management
--Add screenshots for failed tests
--Add payment page automation
--Add CI/CD integration using GitHub Actions
--Improve reporting
+* Add more test scenarios
+* Add parameterized test data
+* Improve test data management
+* Add screenshots for failed tests
+* Add payment page automation
+* Add CI/CD integration using GitHub Actions
+* Improve reporting
