@@ -230,3 +230,8 @@ Possible future improvements include:
 * Add payment page automation
 * Add CI/CD integration using GitHub Actions
 * Improve reporting
+
+<img width="1365" height="723" alt="image" src="https://github.com/user-attachments/assets/a35c68bb-995e-4a68-ac20-56910aaffa94" />
+<img width="808" height="1257" alt="test execution report" src="https://github.com/user-attachments/assets/a8854203-6255-484f-be6c-bc7bf9c52e64" />
+
+
