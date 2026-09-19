@@ -1,25 +1,68 @@
-# Playwright Python Pytest Automation - Shopping Website
+# 🛒 Playwright Python Pytest Automation Framework
 
-## Project Overview
+A beginner-friendly **end-to-end web automation framework** built using **Python, Playwright, and pytest**, following the **Page Object Model (POM)** design pattern.
 
-This project is a Python-based web automation framework built using Playwright and pytest.
+The framework automates an e-commerce shopping workflow including login, product selection, cart validation, checkout, and order placement.
 
-The project follows the Page Object Model (POM) design pattern to keep page locators and page-specific actions organized and reusable.
+---
 
-The automation covers an end-to-end shopping workflow on the Automation Exercise website.
+## 🌐 Application Under Test
 
-## Tech Stack
+**Website:** [Automation Exercise](https://www.automationexercise.com/)
 
-- Python
-- Playwright
-- pytest
-- pytest-html
-- Page Object Model (POM)
-- Git and GitHub
+The project uses the **Automation Exercise** website as the application under test for practicing real-world web UI automation scenarios.
 
-## Automation Flow
+---
 
-The end-to-end test covers the following workflow:
+## 🎯 Project Objective
+
+The objective of this project is to build a structured and maintainable UI automation framework using Python and Playwright while applying common QA automation practices such as:
+
+* Page Object Model (POM)
+* Reusable page methods
+* pytest fixtures
+* Assertions and validations
+* Browser automation
+* Logging
+* HTML test reporting
+* End-to-end test execution
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology        | Purpose                  |
+| ----------------- | ------------------------ |
+| Python            | Programming language     |
+| Playwright        | Web UI automation        |
+| pytest            | Test framework           |
+| pytest-html       | HTML test reporting      |
+| Page Object Model | Framework design pattern |
+| Git               | Version control          |
+| GitHub            | Source code repository   |
+
+---
+
+## 🧪 Test Coverage
+
+The end-to-end automation covers the following areas:
+
+| Module          | Scenarios Covered                                       |
+| --------------- | ------------------------------------------------------- |
+| Home Page       | Logo validation, Login navigation, Products navigation  |
+| Login           | Login page validation, credential entry, authentication |
+| Products        | Products page validation, product selection             |
+| Product Details | Product details validation, Add to Cart                 |
+| Cart            | Cart navigation and product validation                  |
+| Checkout        | Checkout page, delivery address, billing address        |
+| Order           | Order comment, order placement, confirmation            |
+| Logout          | Navigation and logout                                   |
+
+---
+
+## 🔄 End-to-End Automation Flow
+
+The main test scenario follows this workflow:
 
 1. Open the Automation Exercise website
 2. Verify the home page logo
@@ -43,14 +86,62 @@ The end-to-end test covers the following workflow:
 20. Verify billing address details
 21. Enter an order comment
 22. Place the order
-23. Get order placed confirmation message
+23. Verify the order confirmation message
 24. Navigate to the Home page
 25. Log out from the application
 
-## Project Structure
+---
+
+## 🏗️ Framework Architecture
+
+The framework follows the **Page Object Model (POM)** design pattern.
 
 ```text
-playwright-vs-code-automation/
+                    Test Layer
+                        │
+                        ▼
+               test_end_to_end.py
+                        │
+        ┌───────────────┼────────────────┐
+        ▼               ▼                ▼
+    HomePage        LoginPage       ProductsPage
+        │               │                │
+        └───────────────┼────────────────┘
+                        ▼
+                ProductDetailsPage
+                        │
+                        ▼
+                   ViewCartPage
+                        │
+                        ▼
+                   CheckoutPage
+                        │
+                        ▼
+                    BasePage
+                        │
+                        ▼
+                    Playwright
+```
+
+### Page Object Responsibilities
+
+Each page object contains:
+
+* Page locators
+* Page-specific actions
+* Page-specific validations
+* Reusable methods
+
+The test layer interacts with page objects instead of directly locating elements inside the test.
+
+This keeps the test flow readable and makes page-specific code easier to maintain.
+
+---
+
+## 📂 Project Structure
+
+```text
+Playwright-Python-Pytest-Automation-Shopping-Website/
 │
 ├── pages/
 │   ├── __init__.py
@@ -72,6 +163,7 @@ playwright-vs-code-automation/
 │
 ├── reports/
 ├── screenshots/
+│
 ├── conftest.py
 ├── pytest.ini
 ├── requirements.txt
@@ -79,21 +171,23 @@ playwright-vs-code-automation/
 └── README.md
 ```
 
-## Key Features
+---
+
+## 🔑 Key Framework Features
 
 ### 1. Page Object Model
 
 Each application page has its own page object containing:
 
-* Page locators
+* Locators
 * Page actions
 * Page-specific validations
 
-A common `BasePage` is used as the parent class for the page objects.
+A common `BasePage` is used as the parent class for page objects.
 
-### 2. Pytest
+### 2. pytest
 
-pytest is used as the test framework for:
+pytest is used for:
 
 * Test execution
 * Assertions
@@ -102,17 +196,23 @@ pytest is used as the test framework for:
 
 ### 3. Playwright
 
-Playwright is used for browser automation and web element interactions.
+Playwright is used for:
 
-The browser runs in headed mode so the automation steps can be visually observed during execution.
+* Browser automation
+* Element interaction
+* Page navigation
+* Locator handling
+* Assertions and validations
+
+The browser is launched in **headed mode** so the automation steps can be visually observed during execution.
 
 ### 4. Assertions
 
-Assertions are used to verify important application behavior and page states.
+Assertions are used to validate important application states and expected behavior throughout the end-to-end workflow.
 
 ### 5. Logging
 
-Python logging is used to record useful information during test execution, such as:
+Python logging is used to record useful information during execution, including:
 
 * Application URL
 * Page title
@@ -122,9 +222,11 @@ Python logging is used to record useful information during test execution, such 
 
 ### 6. HTML Reporting
 
-pytest-html is used to generate an HTML test execution report.
+`pytest-html` is used to generate an HTML test execution report.
 
-## Prerequisites
+---
+
+## ⚙️ Prerequisites
 
 Make sure the following are installed:
 
@@ -132,104 +234,142 @@ Make sure the following are installed:
 * pip
 * Git
 
-## Installation
+---
 
-Clone the repository:
+## 📥 Installation
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Monika0015git/Playwright-Python-Pytest-Automation-Shopping-Website.git
 ```
 
-Navigate to the project directory:
+### 2. Navigate to the project directory
 
 ```bash
 cd Playwright-Python-Pytest-Automation-Shopping-Website
 ```
 
-Create a virtual environment:
+### 3. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the virtual environment on Windows:
+### 4. Activate the virtual environment
 
-```powershell
+#### Windows
+
+```bash
 venv\Scripts\Activate.ps1
 ```
 
-Install the required Python packages:
+### 5. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Install Playwright browsers:
+### 6. Install Playwright browsers
 
 ```bash
 playwright install
 ```
 
-## How to Run Tests
+---
 
-Run the complete test suite:
+## ▶️ Running the Tests
+
+### Run the complete test suite
 
 ```bash
 pytest
 ```
 
-Run tests with console output visible:
+### Run tests with console output
 
 ```bash
 pytest -s
 ```
 
-Generate an HTML report:
+### Generate an HTML report
 
 ```bash
 pytest -s --html=reports/report.html --self-contained-html
 ```
 
-## Test Reports and Logging
+---
 
-The project is configured to:
+## 📊 Test Reports & Logging
+
+The framework is configured to:
 
 * Display test logs in the terminal
 * Store logs in `reports/test.log`
-* Generate HTML test reports in the `reports` directory
+* Generate HTML reports in the `reports` directory
 
-The `reports` directory is excluded from Git using `.gitignore`.
+The generated reports are excluded from Git using `.gitignore`.
 
-## Page Object Model
+---
 
-The framework follows a simple Page Object Model structure.
+## 📸 Screenshots
 
-```text
-BasePage
-   │
-   ├── HomePage
-   ├── LoginPage
-   ├── ProductsPage
-   ├── ProductDetailsPage
-   ├── ViewCartPage
-   └── CheckoutPage
-```
+Screenshots can be stored in the `screenshots` directory to document:
 
-The test class interacts with the page objects rather than directly locating elements inside the test.
+* Test execution
+* Application workflow
+* Failed test scenarios
+* HTML test reports
 
-This keeps the test scenario easier to read and makes page-specific code easier to maintain.
+---
 
-## Future Enhancements
+## 🧩 Why Page Object Model?
 
-Possible future improvements include:
+Page Object Model is used to separate **test logic** from **page-specific locators and actions**.
 
-* Add more test scenarios
-* Add parameterized test data
+This provides:
+
+* Better code organization
+* Reusable page methods
+* Easier maintenance
+* Reduced locator duplication
+* More readable test cases
+
+---
+
+## 🚀 Future Enhancements
+
+Possible improvements for the framework include:
+
+* Add more positive and negative test scenarios
+* Add parameterized test data using pytest
 * Improve test data management
-* Add screenshots for failed tests
-* Add payment page automation
+* Add automatic screenshots on test failure
+* Expand checkout and payment automation
+* Add cross-browser execution
 * Add CI/CD integration using GitHub Actions
-* Improve reporting
+* Improve test reporting
+
+---
+
+## 👩‍💻 Author
+
+**Monika Rani Bilung**
+
+Junior QA Engineer | Manual Testing | Test Automation
+
+**GitHub:**
+https://github.com/Monika0015git
+
+**LinkedIn:**
+http://www.linkedin.com/in/monika-bilung-060201274
+
+---
+
+## 🔗 Repository
+
+**GitHub Repository:**
+https://github.com/Monika0015git/Playwright-Python-Pytest-Automation-Shopping-Website
 
 <img width="1365" height="723" alt="image" src="https://github.com/user-attachments/assets/a35c68bb-995e-4a68-ac20-56910aaffa94" />
 <img width="808" height="1257" alt="test execution report" src="https://github.com/user-attachments/assets/a8854203-6255-484f-be6c-bc7bf9c52e64" />
